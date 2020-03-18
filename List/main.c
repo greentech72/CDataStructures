@@ -1,6 +1,12 @@
 #include "list.h"
 #include <stdio.h>
 
+int cmp(int* data) {
+	if (*data == 4)
+		return 1;
+	return 0;
+}
+
 int main() {
 	printf("List\n");
 
@@ -51,6 +57,12 @@ int main() {
 	}
 	
 	printf("After insert (4, 7]\n");
+	list_print_as_int(a);
+
+	printf("4 in list on index : %d\n", list_find(a, cmp));
+
+	printf("After remove_if\n");
+	list_remove_if(a, cmp);
 	list_print_as_int(a);
 
 	list_clear(a);

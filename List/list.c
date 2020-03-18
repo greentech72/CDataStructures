@@ -137,6 +137,7 @@ void list_clear(node_t* begin) {
 	begin->next = NULL;
 }
 
+#ifndef __cplusplus
 void list_print_as_int(node_t* b) {
 	node_t* curr = b;
 	while (curr->next != NULL) {
@@ -144,4 +145,47 @@ void list_print_as_int(node_t* b) {
 		curr = curr->next;
 	}
 	printf("\n");
+}
+#endif
+
+void list_remove_if(node_t* begin, int cmp(void*)) {
+	// If cmp(data) == 1 remove
+	size_t i = 0;
+	node_t* curr = begin;
+	node_t* prev;
+	while (curr->next != NULL) {
+		if (cmp(curr->data) == 1) {
+			if (i == 0) {
+				list_pop_top(&begin);
+			}
+			else if (i == list_size(begin)) {
+				list_pop_back(begin);
+			}
+			else{
+				list_erase(begin, i - 1);
+				curr = prev;
+				i -= 1;
+			}
+		}
+		i++;
+		if (curr->next == NULL)
+			return;
+		prev = curr;
+		curr = curr->next;
+	}
+}
+
+size_t list_find(node_t* begin, int cmp(void*)) {
+	size_t i = 0;
+	node_t* curr = begin;
+	while (curr->next != NULL) {
+		if (cmp(curr->data) == 1) {
+			return i;
+		}
+		i++;
+		if (curr->next == NULL)
+			return 0;
+		curr = curr->next;
+	}
+	return 0;
 }
