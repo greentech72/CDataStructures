@@ -1,3 +1,6 @@
+#ifndef LIST_H
+#define LIST_H
+
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -40,4 +43,6 @@ size_t list_find(node_t* begin, int cmp(void*));
 
 #ifndef __cplusplus
 void list_print_as_int(node_t* b);
+#endif
+
 #endif
