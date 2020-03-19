@@ -1,6 +1,6 @@
 <h2>List</h2>
 <p>I developed my own C implementation of this simple data structure for using in my future projects (I hope so).
-There are some very useful functions and also one data structure (struct node or just node_t).</p>
+There are some very useful functions and also one data structure (struct node or just node_t). Also you can use main.c to check if everything is working fine.</p>
 Data structure has two lines:
 <ul>
   <li>data pointer - void* data</li>
@@ -27,3 +27,4 @@ There are such functions :
   <li><strong>size_t list_find(node_t* begin, int cmp(void*))</strong> - return index of the first element where cmp returns 1.</li>
   <li><strong>void list_print_as_int(node_t* b)</strong> - ONLY C FUNCTION, ONLY PRINTS INTEGERS.</li>
 </ol>
+
