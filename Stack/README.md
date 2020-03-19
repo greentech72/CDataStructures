@@ -1,4 +1,4 @@
-<h2>List</h2>
+<h2>Stack</h2>
 <p>I developed my own C implementation of this simple data structure for using in my future projects (I hope so).
 There are some very useful functions and also one data structure (struct stack or just stack). Also you can use main.c to check if everything is working fine.</p>
 Data structure has three lines:
