@@ -189,3 +189,16 @@ size_t list_find(node_t* begin, int cmp(void*)) {
 	}
 	return 0;
 }
+
+void list_reverse(node_t** begin) {
+	node_t* curr = *begin;
+	node_t* prev = list_create();
+	node_t* next = NULL;
+	while (curr->next != NULL) {
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+	*begin = prev;
+}

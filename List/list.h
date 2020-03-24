@@ -41,6 +41,8 @@ void list_remove_if(node_t* begin, int cmp (void*)); // cmp if true = 1 else 0
 
 size_t list_find(node_t* begin, int cmp(void*));
 
+void list_reverse(node_t** begin);
+
 #ifndef __cplusplus
 void list_print_as_int(node_t* b);
 #endif

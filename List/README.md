@@ -25,6 +25,7 @@ There are such functions :
   <li><strong>void list_clear (node_t * begin)</strong> - clear the entire list (delete all elements after the second).</li>
   <li><strong>void list_remove_if(node_t* begin, int cmp (void*))</strong> - remove data if cmp(data) returns 1.</li>
   <li><strong>size_t list_find(node_t* begin, int cmp(void*))</strong> - return index of the first element where cmp returns 1.</li>
+  <li><strong>void list_reverse(node_t** begin)</strong> - reverse whole list.</li>
   <li><strong>void list_print_as_int(node_t* b)</strong> - ONLY C FUNCTION, ONLY PRINTS INTEGERS.</li>
 </ol>
 
