@@ -1,5 +1,10 @@
 #include "stack.h"
 
+static void stack_resize(stack_t* stack) {
+	stack->size *= 2;
+	stack->data = realloc(stack->data, stack->size * sizeof(void*));
+}
+
 stack_t* stack_create(size_t size) {
 	stack_t* n = malloc(sizeof(stack_t));
 	if (size == 0) 
@@ -31,7 +36,7 @@ void* stack_top(stack_t* stack) {
 
 void stack_push(stack_t* stack, void* data) {
 	if (stack->index == stack->size)
-		return;
+		stack_resize(stack);
 	*(((size_t*)stack->data) + stack->index++) = data;
 }
 

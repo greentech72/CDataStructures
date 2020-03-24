@@ -3,12 +3,15 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+//#include <memory.h>
 
 typedef struct stack {
 	void** data;
 	size_t index;
 	size_t size;
 }stack_t;
+
+static void stack_resize(stack_t* stack);
 
 stack_t* stack_create(size_t size);
 

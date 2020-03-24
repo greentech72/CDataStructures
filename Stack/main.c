@@ -4,15 +4,15 @@
 int main() {
 	printf("Stack\n");
 	
-	stack_t* s = stack_create(150);
+	stack_t* s = stack_create(10);
 	printf("Stack created\n");
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 20; i++) {
 		int* a = malloc(sizeof(int));
 		*a = i;
 		stack_push(s, a);
 	}
-	printf("Pushed 10 elements [0, 10)\n");
+	printf("Pushed 20 elements [0, 20)\n");
 
 	for (int i = 0; i < 3; i++) {
 		int* a = stack_top(s);
@@ -21,7 +21,9 @@ int main() {
 		free(a);
 	}
 	printf("\n");
-	printf("Poped 3 elements 9, 8, 7\n");
+	printf("Poped 3 elements\n");
+	
+
 
 	stack_clear(s);
 	printf("After clear function and is_empty() : %d (1 - true)\n", stack_is_empty(s));
@@ -31,3 +33,4 @@ int main() {
 	
 	return 0;
 }
+
