@@ -59,6 +59,10 @@ int main() {
 	printf("After insert (4, 7]\n");
 	list_print_as_int(a);
 
+	printf("After reverse\n");
+	list_reverse(&a);
+	list_print_as_int(a);
+
 	printf("4 in list on index : %d\n", list_find(a, cmp));
 
 	printf("After remove_if\n");
