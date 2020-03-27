@@ -3,4 +3,5 @@
 project ("DataStructs")
 
 add_subdirectory ("List")
+add_subdirectory ("LinkedList")
 add_subdirectory ("Stack")
