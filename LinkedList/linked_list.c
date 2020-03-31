@@ -139,8 +139,8 @@ void ll_insert(lln_t* begin, void* data, size_t pos) {
 		new_node->next->prev = new_node;
 	}
 	else {
-		lln_t* after = begin->prev->prev;
-		for (size_t i = 0; i < len - pos - 1; i++) {
+		lln_t* after = begin->prev;
+		for (size_t i = 0; i < len - pos; i++) {
 			after = after->prev;
 		}
 		lln_t* new_node = ll_create();
